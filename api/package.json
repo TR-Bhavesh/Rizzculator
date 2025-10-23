@@ -1,0 +1,12 @@
+{
+  "name": "rizzculator-api",
+  "version": "1.0.0",
+  "description": "Rizzculator API functions",
+  "main": "index.js",
+  "dependencies": {
+    "groq-sdk": "^0.7.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
