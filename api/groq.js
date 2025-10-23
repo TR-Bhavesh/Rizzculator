@@ -123,7 +123,7 @@ module.exports = async function handler(req, res) {
   }
 };
 
-// Image Analysis Handler
+// Image Analysis Handler - UPDATED WITH LLAMA 4 SCOUT (October 2025)
 async function handleImageAnalysis(groq, messages, userProfile) {
   const systemPrompt = `You are Rizzculator AI, a brutally honest but hilarious vibe analyzer.
 Rate this person's vibe on a scale of 1-100. Be funny, use Gen Z slang, and give specific observations.
@@ -131,7 +131,7 @@ Keep your response to 2-3 sentences max. Be playful but not mean.`;
 
   try {
     const completion = await groq.chat.completions.create({
-      model: "llama-3.2-11b-vision-preview",
+      model: "meta-llama/llama-4-scout-17b-16e-instruct", // ✅ CURRENT WORKING MODEL (October 2025)
       messages: [
         {
           role: "system",
@@ -192,7 +192,7 @@ What's working? What's not? Be funny but helpful. 2-3 sentences max.`;
 
   try {
     const completion = await groq.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
+      model: "llama-3.3-70b-versatile", // ✅ Still working for text
       messages: [
         {
           role: "system",
@@ -230,7 +230,7 @@ Be funny and helpful. User: ${userProfile?.username || 'Anonymous'} (Rizz Score:
 
   try {
     const completion = await groq.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
+      model: "llama-3.3-70b-versatile", // ✅ Still working for text
       messages: [
         {
           role: "system",
